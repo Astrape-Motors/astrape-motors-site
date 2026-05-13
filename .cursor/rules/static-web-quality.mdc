@@ -1,0 +1,19 @@
+---
+description: Static website standards for Astrape Motors site work
+globs: **/*.{html,css,js,mjs,json,md}
+alwaysApply: false
+---
+
+# Static Web Project Standards
+
+- Keep the site deployable as static assets with no server dependency.
+- Prefer semantic HTML structure and clear, accessible call-to-action text.
+- Never commit credentials or secrets; use environment variables only.
+- Run `npm run quality` before deployment and before opening PRs.
+- Keep styles in `assets/styles.css` or additional modular CSS files.
+
+## Deployment Safety
+
+- Require `FTP_HOST`, `FTP_USER`, and `FTP_PASSWORD` env vars for deploy.
+- Build to `dist/` first, then upload only that directory to FTP.
+- Keep deploy scripts explicit and fail fast on missing prerequisites.
