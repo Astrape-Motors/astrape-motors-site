@@ -1,0 +1,26 @@
+<!-- @dsCard group="Type" viewport="700x230" name="Type scale" subtitle="Fluid display steps + fixed body sizes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); }
+  .wrap { padding: 22px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .row { display: flex; align-items: baseline; gap: 18px; border-top: 1px solid var(--line); padding-top: 11px; }
+  .row:first-child { border-top: none; padding-top: 0; }
+  .s { font-family: var(--font-display); font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; }
+  .tag { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-mono-muted); margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row"><span class="s" style="font-size:44px">H1 hero</span><span class="tag">--fs-h1 · clamp(38,8vw,88)</span></div>
+  <div class="row"><span class="s" style="font-size:34px">H2 section</span><span class="tag">--fs-h2 · clamp(30,5vw,46)</span></div>
+  <div class="row"><span class="s" style="font-size:26px;font-weight:600">Sector title</span><span class="tag">--fs-card-title-lg · 26</span></div>
+  <div class="row"><span class="s" style="font-size:21px;font-weight:600">Card title</span><span class="tag">--fs-card-title · 21</span></div>
+  <div class="row"><span class="s" style="font-size:16px;font-weight:500;font-family:var(--font-body)">Body 16</span><span class="tag">--fs-body · 16</span></div>
+  <div class="row"><span class="s" style="font-size:12.5px;font-family:var(--font-mono);letter-spacing:.2em;color:var(--text-eyebrow)">MONO 12.5</span><span class="tag">--fs-mono · 12.5</span></div>
+</div>
+</body>
+</html>

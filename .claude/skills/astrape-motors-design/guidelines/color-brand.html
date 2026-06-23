@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand pair" subtitle="Electric blue + violet — the only hero gradient" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); }
+  .wrap { display: flex; gap: 14px; padding: 24px 28px; align-items: stretch; flex-wrap: wrap; }
+  .sw { flex: 1; min-width: 140px; border-radius: var(--r-card); padding: 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 96px; }
+  .sw .n { font-size: 12px; font-weight: 500; }
+  .sw .h { font-size: 11px; opacity: .85; margin-top: 3px; }
+  .grad { background: var(--grad-brand); color: #06222B; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sw" style="background:var(--brand-blue);color:var(--ink-on-blue);"><span class="n">Electric Blue</span><span class="h">--brand-blue · #5BE0FF</span></div>
+  <div class="sw" style="background:var(--brand-violet);color:#140433;"><span class="n">Violet Surge</span><span class="h">--brand-violet · #9B8CFF</span></div>
+  <div class="sw grad"><span class="n">Hero gradient</span><span class="h">--grad-brand · 95°</span></div>
+  <div class="sw" style="background:var(--ink-on-blue);color:var(--brand-blue);border:1px solid var(--line-strong);"><span class="n">Ink on blue</span><span class="h">--ink-on-blue · #06222B</span></div>
+</div>
+</body>
+</html>

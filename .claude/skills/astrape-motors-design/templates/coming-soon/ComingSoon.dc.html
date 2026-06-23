@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Coming soon" description="Minimal single-screen FOCAL landing — wordmark, one line, email CTA. A clean placeholder/holding page in the Astrapē Motors brand." -->
+<helmet>
+<script src="./ds-base.js"></script>
+</helmet>
+
+<div style="position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:#0A0907;color:#E7EAF0;font-family:'IBM Plex Sans',system-ui,sans-serif;">
+
+  <!-- focal glows -->
+  <div style="position:absolute;top:-240px;right:-140px;width:760px;height:760px;background:radial-gradient(circle,color-mix(in srgb,#5BE0FF 18%,transparent),transparent 62%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-280px;left:-180px;width:660px;height:660px;background:radial-gradient(circle,color-mix(in srgb,#9B8CFF 14%,transparent),transparent 62%);pointer-events:none;"></div>
+
+  <!-- top wordmark -->
+  <div style="position:relative;padding:32px 8vw;">
+    <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Wordmark" size="15" hint-size="200px,30px"></x-import>
+  </div>
+
+  <!-- centered content -->
+  <div style="position:relative;flex:1;display:flex;align-items:center;padding:0 8vw 60px;">
+    <div style="max-width:840px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.3em;margin-bottom:30px;"><span style="color:#5BE0FF;">ELECTRIFICATION</span><span style="color:#5d6470;"> · </span><span style="color:#E8924E;">CONTROLS</span><span style="color:#5d6470;"> · </span><span style="color:#A8BE6E;">AUTOMATION</span><span style="color:#5d6470;"> · </span><span style="color:#C79AD6;">R&amp;D</span></div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,9vw,96px);line-height:0.96;letter-spacing:-0.035em;margin:0 0 28px;">A new kind of<br>electrification firm is <span style="background:linear-gradient(95deg,#5BE0FF,#9B8CFF);-webkit-background-clip:text;background-clip:text;color:transparent;">coming.</span></h1>
+      <p style="font-size:20px;line-height:1.6;color:#A7AEB8;max-width:540px;margin:0 0 40px;">Senior powertrain, controls and automation engineering for automotive and marine. The full site is on its way — say hello in the meantime.</p>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" href="mailto:hello@astrapemotors.com" hint-size="150px,52px">Get in touch</x-import>
+        <a href="mailto:hello@astrapemotors.com" style="font-family:'IBM Plex Mono',monospace;color:#E7EAF0;font-size:15px;padding:16px 8px;text-decoration:none;">hello@astrapemotors.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer line -->
+  <div style="position:relative;padding:28px 8vw;border-top:1px solid rgba(255,255,255,.07);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#5d6470;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+    <span>© 2026 ASTRAPĒ MOTORS</span>
+    <span>EV · HEV · MARINE</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

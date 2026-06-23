@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x160" name="Discipline keys" subtitle="Color = discipline — the system's one rule" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); }
+  .wrap { display: flex; gap: 14px; padding: 24px 28px; flex-wrap: wrap; }
+  .sw { flex: 1; min-width: 150px; border-radius: var(--r-card); background: var(--surface-card); border: 1px solid var(--line); padding: 16px; }
+  .bar { width: 30px; height: 3px; border-radius: 2px; margin-bottom: 14px; }
+  .idx { font-size: 12px; margin-bottom: 14px; }
+  .n { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--text-primary); }
+  .h { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sw"><div class="bar" style="background:var(--disc-electrification)"></div><div class="idx" style="color:var(--disc-electrification)">/01</div><div class="n">Electrification</div><div class="h">blue · #5BE0FF</div></div>
+  <div class="sw"><div class="bar" style="background:var(--disc-controls)"></div><div class="idx" style="color:var(--disc-controls)">/02</div><div class="n">Controls</div><div class="h">clay · #E8924E</div></div>
+  <div class="sw"><div class="bar" style="background:var(--disc-automation)"></div><div class="idx" style="color:var(--disc-automation)">/03</div><div class="n">Automation &amp; Test</div><div class="h">sage · #A8BE6E</div></div>
+  <div class="sw"><div class="bar" style="background:var(--disc-rnd)"></div><div class="idx" style="color:var(--disc-rnd)">/04</div><div class="n">R&amp;D</div><div class="h">plum · #C79AD6</div></div>
+</div>
+</body>
+</html>

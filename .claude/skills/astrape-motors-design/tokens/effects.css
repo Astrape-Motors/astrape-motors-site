@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Astrapē Motors — Effects: shadows, glows, surfaces & motion
+   --------------------------------------------------------------------------
+   Light is the whole story. CTAs and the lightning mark GLOW (a soft colored
+   halo). The "method" band is RECESSED with a double inset shadow so neighbors
+   read as raised. The people panel FLOATS on a big soft drop shadow. Motion is
+   minimal: a slow marquee and a gentle bolt float — no bounces, no spring.
+   ========================================================================== */
+:root {
+  /* ---- Glow (CTA + lightning mark) -------------------------------------- */
+  --glow-subtle: 10px;
+  --glow-default: 30px;
+  --glow-charged: 44px;
+  --glow: var(--glow-subtle);   /* production default = Subtle           */
+  /* usage: box-shadow: 0 0 var(--glow) color-mix(in srgb, var(--accent) 40%, transparent); */
+
+  /* ---- Floating people panel -------------------------------------------- */
+  --shadow-panel: 0 36px 90px -34px rgba(0, 0, 0, 0.75),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  /* ---- Recessed "method" band (double inset, top & bottom) -------------- */
+  --shadow-recessed: inset 0 19px 32px -18px rgba(0, 0, 0, 0.72),
+                     inset 0 -19px 32px -18px rgba(0, 0, 0, 0.72);
+
+  /* ---- Card border ------------------------------------------------------- */
+  --card-border: 1px solid rgba(255, 255, 255, 0.08); /* @kind other */
+
+  /* ---- Hero / focal radial glows ---------------------------------------- */
+  --focal-glow-blue: radial-gradient(circle,
+    color-mix(in srgb, var(--brand-blue) 20%, transparent), transparent 62%);
+  --focal-glow-violet: radial-gradient(circle,
+    color-mix(in srgb, var(--brand-violet) 16%, transparent), transparent 62%);
+
+  /* ---- Blueprint grid (method band) ------------------------------------- */
+  --blueprint-line: color-mix(in srgb, var(--brand-blue) 6%, transparent);
+
+  /* ---- Lightning-mark clip-path ----------------------------------------- */
+  --bolt-clip: polygon(52% 0, 100% 0, 48% 44%, 84% 44%, 16% 100%, 46% 52%, 4% 52%); /* @kind other */
+
+  /* ---- Motion ------------------------------------------------------------ */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-marquee: 24s; /* @kind other */
+  --dur-float: 5s; /* @kind other */
+}
+
+/* ---- Brand keyframes (available globally) ------------------------------- */
+@keyframes amMarq { to { transform: translateX(-50%); } }
+@keyframes amFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Astrapē Motors — Spacing, radii & layout
+   --------------------------------------------------------------------------
+   Sections breathe: ~104px vertical padding, 8vw horizontal gutters, content
+   capped at 1180px (1240px for the floating people panel). Radii are SMALL and
+   intentional — engineering-flat cards (4–6px), soft portraits (10px), one big
+   panel (22px), and fully-round pills (40px).
+   ========================================================================== */
+:root {
+  /* ---- Spacing scale ----------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 14px;
+  --sp-5: 18px;
+  --sp-6: 22px;
+  --sp-7: 28px;
+  --sp-8: 40px;
+  --sp-9: 54px;
+  --sp-10: 64px;
+
+  /* ---- Section rhythm ---------------------------------------------------- */
+  --section-pad-y: 104px;     /* standard section vertical padding   */
+  --section-gutter: 8vw;      /* horizontal page gutter              */
+  --content-max: 1180px;      /* centered content width              */
+  --content-max-panel: 1240px;/* floating people panel               */
+  --measure: 560px;           /* readable paragraph max-width        */
+
+  /* ---- Radii ------------------------------------------------------------- */
+  --r-tag: 2px;        /* mono spec tags                            */
+  --r-card: 4px;       /* capability cards                          */
+  --r-card-lg: 6px;    /* sector cards                              */
+  --r-portrait: 10px;  /* team portraits                            */
+  --r-panel: 22px;     /* floating people panel                     */
+  --r-pill: 40px;      /* buttons / CTAs                            */
+
+  /* ---- Grid sizing ------------------------------------------------------- */
+  --grid-gap: 18px;          /* capability card grid                */
+  --grid-gap-lg: 22px;       /* sector grid                         */
+  --blueprint-cell: 36px;    /* process band grid cell              */
+  --keybar-w: 30px;          /* discipline key bar width            */
+  --keybar-h: 3px;
+}
