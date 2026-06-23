@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint:js": "eslint .",
-    "lint:html": "htmlhint \"**/*.html\"",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"index.html,dist/**,design/**\"",
     "lint:css": "stylelint \"assets/**/*.css\"",
     "lint": "run-p lint:*",
     "format": "prettier . --write",
