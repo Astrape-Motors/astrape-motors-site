@@ -1,9 +1,0 @@
-node_modules/
-dist/
-
-# Compiled, self-contained design bundle (build artifact — edit the design
-# master under design/, then re-export; do not reformat the inlined output).
-/index.html
-
-# Design handoff source (authored in the design workspace runtime).
-design/
