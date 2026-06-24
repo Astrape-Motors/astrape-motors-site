@@ -31,7 +31,7 @@ artifacts**: add them to the relevant ignore globs (`.prettierignore`, stylelint
 ignores) rather than reformatting them. Re-export from the design master instead of editing
 compiled output by hand.
 
-## Deploy (unchanged)
-`npm run build` → `npm run deploy:ftp` (Porkbun; FTP password via macOS Keychain service
-`astrape-motors-ftp`). Replace the root `index.html` with a fresh export from the design
-master, then build + deploy.
+## Build
+Replace the root `index.html` with a fresh export from the design master, then run
+`npm run build` to emit static assets to `dist/`. (There is no automated deploy step in this
+repo — publish `dist/` however the site is hosted.)

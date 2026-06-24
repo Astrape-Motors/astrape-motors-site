@@ -13,8 +13,7 @@
     "lint": "run-p lint:*",
     "format": "prettier . --write",
     "check-format": "prettier . --check",
-    "quality": "npm run check-format && npm run lint && npm run build",
-    "deploy:ftp": "node scripts/deploy-ftp.mjs"
+    "quality": "npm run check-format && npm run lint && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -30,9 +29,5 @@
     "stylelint": "^17.11.0",
     "stylelint-config-standard": "^40.0.0",
     "vite": "^8.0.12"
-  },
-  "dependencies": {
-    "basic-ftp": "^6.0.1",
-    "dotenv": "^17.4.2"
   }
 }

@@ -4,7 +4,7 @@
 Marketing homepage for **astrapemotors.com** — an electrification, controls & automation
 engineering consultancy (EV / HEV, automotive & marine, controls/automation R&D). The page
 introduces the brand, the four service disciplines, how the work gets done, the markets served,
-the team, and a contact CTA. Replaces the Porkbun placeholder.
+the team, and a contact CTA. Replaces the prior placeholder page.
 
 ## About the Design Files
 The design is authored as a **streaming "Design Component"** HTML file
@@ -34,12 +34,11 @@ Recreate/treat pixel-for-pixel. The only unfinished pieces are the **6 image pla
 ## Repo Integration (this repository)
 Observed from `README.md` + tree:
 - Pipeline: `npm install` → `npm run dev` (local) → `npm run quality` (prettier/htmlhint/
-  stylelint/eslint) → `npm run build` (outputs `dist/`) → `npm run deploy:ftp` (uploads `dist/`
-  to Porkbun, FTP password via macOS Keychain service `astrape-motors-ftp`).
+  stylelint/eslint) → `npm run build` (outputs `dist/`, publish that directory to the static host).
 - A committed root `index.html` (~417 KB) — same self-contained-bundle shape as our output.
 
 **Drop-in step:** replace the repo's root `index.html` with the `index.html` in this bundle, then
-run the normal `build` + `deploy:ftp`.
+run the normal `build`.
 
 ⚠️ The bundle is one large inlined artifact, so `npm run quality` (htmlhint/stylelint/prettier)
 will likely complain about it. Treat it like a build artifact: either add it to the relevant
