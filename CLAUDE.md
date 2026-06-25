@@ -31,7 +31,20 @@ artifacts**: add them to the relevant ignore globs (`.prettierignore`, stylelint
 ignores) rather than reformatting them. Re-export from the design master instead of editing
 compiled output by hand.
 
+## Standing rule — copy guardrails (legal)
+Astrapē Motors, LLC holds **no** PE license and **no** Certificate of Authorization. Marketing
+copy must stay out of regulated-engineering / holding-out territory (Ohio ORC 4733.16 / Ch. 4733).
+
+- **Never** introduce: "professional engineer(ing)", "P.E.", "licensed/registered engineer", or
+  any "seal/stamp" claim. Treat "engineering firm/services" as services-for-hire language —
+  allowed only when tethered to the product/build frame, never standalone. "systems engineering"
+  as a *discipline* is fine.
+- Run **`node scripts/copy-audit.mjs`** after any copy change and before build/deploy. Exit 1
+  means a forbidden phrase is present — fix the **source** (the `.dc.html` template and any
+  component default prop, e.g. `SiteFooter` `tagline`), then re-export; don't patch one rendered copy.
+- Rationale + full do/don't list: `.claude/skills/astrape-motors-design/guidelines/copy-guardrails.md`.
+
 ## Build
 Replace the root `index.html` with a fresh export from the design master, then run
 `npm run build` to emit static assets to `dist/`. (There is no automated deploy step in this
-repo — publish `dist/` however the site is hosted.)
+repo — publish `dist/` however the site is hosted.) Run `node scripts/copy-audit.mjs` first.
