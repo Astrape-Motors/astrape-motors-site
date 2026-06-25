@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #0A0907; position: relative; overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif; color: #E7EAF0;
+  }
+  .glow { position: absolute; pointer-events: none; }
+  .glow.blue { width: 760px; height: 760px; top: -260px; right: -160px;
+    background: radial-gradient(circle, rgba(91,224,255,0.20), transparent 60%); }
+  .glow.violet { width: 680px; height: 680px; bottom: -280px; left: -180px;
+    background: radial-gradient(circle, rgba(155,140,255,0.17), transparent 60%); }
+  .grid { position: absolute; inset: 0; opacity: 0.5;
+    background-image:
+      linear-gradient(rgba(91,224,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(91,224,255,0.05) 1px, transparent 1px);
+    background-size: 44px 44px; mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 75%); }
+  .wrap { position: relative; height: 100%; padding: 76px 84px;
+    display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 19px; letter-spacing: .3em;
+    color: #9AA3AF; }
+  .eyebrow .arr { color: #5BE0FF; }
+  .eyebrow .sys { color: #5d6470; }
+  h1 { font-weight: 600; font-size: 92px; line-height: 0.99; letter-spacing: -0.035em;
+    max-width: 940px; }
+  .grad { background: linear-gradient(95deg, #5BE0FF, #9B8CFF);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .foot { display: flex; align-items: flex-end; justify-content: space-between; }
+  .lockup { display: flex; align-items: center; gap: 18px; }
+  .bolt { width: 40px; height: 59px; filter: drop-shadow(0 0 16px rgba(91,224,255,0.5)); }
+  .wm { font-weight: 700; font-size: 30px; letter-spacing: .06em; }
+  .wm .accent { color: #5BE0FF; }
+  .wm .motors { opacity: .45; font-weight: 500; }
+  .url { font-family: 'IBM Plex Mono', monospace; font-size: 19px; letter-spacing: .12em;
+    color: #7d8590; padding-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="glow blue"></div>
+  <div class="glow violet"></div>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="eyebrow">SENSE <span class="arr">→</span> COMPUTE <span class="arr">→</span> ACTUATE <span class="sys">· SYSTEMS ENGINEERING</span></div>
+    <h1>Electrify everything that <span class="grad">moves.</span></h1>
+    <div class="foot">
+      <div class="lockup">
+        <svg class="bolt" viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg"><path d="M35.36 0 L68 0 L32.64 44 L57.12 44 L10.88 100 L31.28 52 L2.72 52 Z" fill="#5BE0FF"></path></svg>
+        <div class="wm">ASTRAP<span class="accent">Ē</span> <span class="motors">MOTORS</span></div>
+      </div>
+      <div class="url">astrapemotors.com</div>
+    </div>
+  </div>
+</body>
+</html>

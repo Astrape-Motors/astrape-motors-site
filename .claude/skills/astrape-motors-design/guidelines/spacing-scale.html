@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Spacing scale" subtitle="Section rhythm — 104px pad, 8vw gutter, 1180 cap" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); }
+  .wrap { padding: 24px 28px; display: flex; flex-direction: column; gap: 9px; }
+  .row { display: flex; align-items: center; gap: 14px; }
+  .bar { height: 12px; background: var(--brand-blue); border-radius: 2px; opacity: .85; }
+  .n { font-size: 11px; color: var(--text-tertiary); width: 130px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row"><span class="n">sp-2 · 8</span><div class="bar" style="width:8px"></div></div>
+  <div class="row"><span class="n">sp-4 · 14</span><div class="bar" style="width:14px"></div></div>
+  <div class="row"><span class="n">sp-7 · 28</span><div class="bar" style="width:28px"></div></div>
+  <div class="row"><span class="n">sp-8 · 40</span><div class="bar" style="width:40px"></div></div>
+  <div class="row"><span class="n">sp-10 · 64</span><div class="bar" style="width:64px"></div></div>
+  <div class="row"><span class="n">section-pad-y · 104</span><div class="bar" style="width:104px"></div></div>
+</div>
+</body>
+</html>

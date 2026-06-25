@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Radii" subtitle="Flat & intentional — 2px tags → 40px pills" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); }
+  .wrap { display: flex; gap: 20px; padding: 26px 28px; align-items: flex-end; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 72px; height: 56px; background: var(--surface-card); border: 1px solid var(--line-strong); border-top: 3px solid var(--brand-blue); }
+  .n { font-size: 11px; color: var(--text-secondary); }
+  .h { font-size: 10px; color: var(--text-mono-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="item"><div class="box" style="border-radius:var(--r-tag)"></div><span class="n">tag</span><span class="h">2px</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--r-card)"></div><span class="n">card</span><span class="h">4px</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--r-card-lg)"></div><span class="n">sector</span><span class="h">6px</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--r-portrait)"></div><span class="n">portrait</span><span class="h">10px</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--r-panel)"></div><span class="n">panel</span><span class="h">22px</span></div>
+  <div class="item"><div class="box" style="border-radius:var(--r-pill);width:96px"></div><span class="n">pill</span><span class="h">40px</span></div>
+</div>
+</body>
+</html>

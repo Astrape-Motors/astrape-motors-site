@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Light & depth" subtitle="Glow · floating panel · recessed band" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); }
+  .wrap { display: flex; gap: 20px; padding: 28px; align-items: center; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; gap: 10px; align-items: center; font-size: 10.5px; color: var(--text-tertiary); }
+  .pill { background: var(--brand-blue); color: var(--ink-on-blue); font-family: var(--font-body); font-weight: 600; font-size: 14px; padding: 13px 22px; border-radius: var(--r-pill); box-shadow: 0 0 30px color-mix(in srgb, var(--brand-blue) 45%, transparent); }
+  .panel { width: 150px; height: 64px; background: var(--people-panel); border: 1px solid var(--line-faint); border-radius: 16px; box-shadow: var(--shadow-panel); }
+  .recessed { width: 150px; height: 64px; background: var(--bg-process); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-recessed); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="item"><div class="pill">Start a project</div><span>CTA glow · --glow</span></div>
+  <div class="item"><div class="panel"></div><span>floating panel · --shadow-panel</span></div>
+  <div class="item"><div class="recessed"></div><span>recessed band · --shadow-recessed</span></div>
+</div>
+</body>
+</html>

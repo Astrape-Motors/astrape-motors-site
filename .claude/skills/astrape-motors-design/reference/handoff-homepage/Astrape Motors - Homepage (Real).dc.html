@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#0A0907"/><path d="M55 22 L72 22 L49 49 L63 49 L41 80 L51 53 L36 53 Z" fill="#5BE0FF"/></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#0A0907;}
+  :root{--accent:#5BE0FF;--accent-ink:#06222B;--accent-2:#9B8CFF;--glow:30px;}
+  @keyframes amMarq{to{transform:translateX(-50%);}}
+  @keyframes amFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+  /* keep grid children shrinkable + portrait slots filling their track */
+  #teamGrid,#teamGrid>div,#teamPortraits{min-width:0;}
+  #teamPortraits>*{width:100%;min-width:0;}
+  @media (max-width:920px){
+    #capGrid{grid-template-columns:1fr 1fr !important;}
+    #sectorGrid{grid-template-columns:1fr !important;}
+    #teamGrid{grid-template-columns:1fr !important;gap:40px !important;}
+    #teamPanel{padding:48px 36px !important;}
+  }
+  @media (max-width:560px){
+    #capGrid{grid-template-columns:1fr !important;}
+    #team{padding:24px 16px !important;}
+    #teamPanel{padding:32px 22px !important;border-radius:16px !important;}
+    #teamGrid{gap:30px !important;}
+  }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="width:100%;overflow-x:hidden;background:#0A0907;color:#E7EAF0;font-family:'IBM Plex Sans',system-ui,sans-serif;">
+
+  <!-- ============ NAV ============ -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 8vw;background:rgba(10,9,7,0.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);">
+    <div style="display:flex;align-items:center;gap:13px;">
+      <div style="width:17px;height:25px;background:var(--accent);clip-path:polygon(52% 0,100% 0,48% 44%,84% 44%,16% 100%,46% 52%,4% 52%);box-shadow:0 0 var(--glow) color-mix(in srgb,var(--accent) 55%,transparent);"></div>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.2em;">ASTRAPE <span style="opacity:.45;font-weight:500;">MOTORS</span></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;font-size:14px;color:#9AA3AF;">
+      <a href="#capabilities" style="color:inherit;text-decoration:none;">Capabilities</a>
+      <a href="#sectors" style="color:inherit;text-decoration:none;">Sectors</a>
+      <a href="#process" style="color:inherit;text-decoration:none;">R&amp;D</a>
+      <a href="#team" style="color:inherit;text-decoration:none;">About</a>
+      <a href="#contact" style="background:var(--accent);color:var(--accent-ink);font-weight:600;padding:10px 20px;border-radius:40px;text-decoration:none;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative;overflow:hidden;padding:118px 8vw 96px;">
+    <div style="position:absolute;top:-220px;right:-120px;width:720px;height:720px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 20%,transparent),transparent 62%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-260px;left:-160px;width:620px;height:620px;background:radial-gradient(circle,color-mix(in srgb,var(--accent-2) 16%,transparent),transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.3em;margin-bottom:30px;"><span style="color:#5BE0FF;">ELECTRIFICATION</span><span style="color:#5d6470;"> · </span><span style="color:#E8924E;">CONTROLS</span><span style="color:#5d6470;"> · </span><span style="color:#A8BE6E;">AUTOMATION</span><span style="color:#5d6470;"> · </span><span style="color:#C79AD6;">R&amp;D</span></div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,8vw,88px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 28px;max-width:980px;">Electrify everything<br>that <span style="background:linear-gradient(95deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;">moves.</span></h1>
+      <p style="font-size:20px;line-height:1.6;color:#A7AEB8;max-width:560px;margin:0 0 40px;">Powertrain, controls, and automation engineering for automotive and marine — from bench prototype to production vessel. We take the hard electrification problems no one else will.</p>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+        <a href="#contact" style="background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:16px;padding:16px 30px;border-radius:40px;text-decoration:none;box-shadow:0 0 var(--glow) color-mix(in srgb,var(--accent) 40%,transparent);">Start a project</a>
+        <a href="#capabilities" style="border:1px solid rgba(255,255,255,.22);color:#E7EAF0;font-size:16px;padding:16px 28px;border-radius:40px;text-decoration:none;">Our capabilities</a>
+      </div>
+      <div style="display:flex;gap:40px;margin-top:64px;flex-wrap:wrap;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">DOMAINS</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">EV · HEV · Marine</div></div>
+        <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">METHOD</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">Model-based design</div></div>
+        <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">VALIDATION</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">HIL / SIL rigs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+  <div style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:18px 0;overflow:hidden;background:#090C10;">
+    <div style="display:flex;width:max-content;animation:amMarq 24s linear infinite;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.16em;color:#6b7280;">
+      <span style="padding:0 28px;">EV POWERTRAINS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">HYBRID SYSTEMS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">MARINE PROPULSION</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">EMBEDDED CONTROLS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">MODEL-BASED DESIGN</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">HIL · SIL VALIDATION</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">AUTOMATION</span><span style="color:var(--accent);">/</span>
+      <span style="padding:0 28px;">EV POWERTRAINS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">HYBRID SYSTEMS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">MARINE PROPULSION</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">EMBEDDED CONTROLS</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">MODEL-BASED DESIGN</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">HIL · SIL VALIDATION</span><span style="color:var(--accent);">/</span><span style="padding:0 28px;">AUTOMATION</span><span style="color:var(--accent);">/</span>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section id="capabilities" style="padding:104px 8vw;">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:54px;flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#7d8590;margin-bottom:18px;">01 — WHAT WE DO</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-0.02em;margin:0;max-width:560px;">The full electrification stack, under one roof.</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.65;color:#A7AEB8;max-width:340px;margin:0;">Most teams need three vendors to electrify a platform. We are the one that does the architecture, the controls, and the validation.</p>
+      </div>
+      <div id="capGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+        <div style="background:#0C0F14;border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:28px 24px;">
+          <div style="width:30px;height:3px;background:#5BE0FF;border-radius:2px;margin-bottom:18px;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5BE0FF;margin-bottom:22px;">/01</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:0 0 12px;">Electrification</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#9AA3AF;margin:0 0 18px;">EV &amp; hybrid powertrain architecture, battery and power-electronics integration, energy management.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5BE0FF;border:1px solid color-mix(in srgb,#5BE0FF 32%,transparent);padding:5px 9px;border-radius:2px;">EV · HEV</span>
+        </div>
+        <div style="background:#0C0F14;border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:28px 24px;">
+          <div style="width:30px;height:3px;background:#E8924E;border-radius:2px;margin-bottom:18px;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E8924E;margin-bottom:22px;">/02</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:0 0 12px;">Controls</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#9AA3AF;margin:0 0 18px;">Embedded control software, model-based design, calibration and supervisory strategy for real powertrains.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E8924E;border:1px solid color-mix(in srgb,#E8924E 32%,transparent);padding:5px 9px;border-radius:2px;">MBD</span>
+        </div>
+        <div style="background:#0C0F14;border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:28px 24px;">
+          <div style="width:30px;height:3px;background:#A8BE6E;border-radius:2px;margin-bottom:18px;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#A8BE6E;margin-bottom:22px;">/03</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:0 0 12px;">Automation &amp; Test</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#9AA3AF;margin:0 0 18px;">HIL / SIL rigs, dyno automation and validation pipelines that catch failures before the road or the water does.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A8BE6E;border:1px solid color-mix(in srgb,#A8BE6E 32%,transparent);padding:5px 9px;border-radius:2px;">HIL · SIL</span>
+        </div>
+        <div style="background:#0C0F14;border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:28px 24px;">
+          <div style="width:30px;height:3px;background:#C79AD6;border-radius:2px;margin-bottom:18px;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C79AD6;margin-bottom:22px;">/04</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:0 0 12px;">R&amp;D &amp; Consulting</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#9AA3AF;margin:0 0 18px;">Feasibility, prototyping and the messy early-stage problems — brought to a working, measurable result.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#C79AD6;border:1px solid color-mix(in srgb,#C79AD6 32%,transparent);padding:5px 9px;border-radius:2px;">R&amp;D</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS / R&D (blueprint) ============ -->
+  <section id="process" style="position:relative;padding:104px 8vw;background-color:#0D0B08;background-image:linear-gradient(color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px);background-size:36px 36px;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:inset 0 19px 32px -18px rgba(0,0,0,0.72), inset 0 -19px 32px -18px rgba(0,0,0,0.72);">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#7d8590;margin-bottom:18px;">02 — HOW WE WORK</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 16px;max-width:680px;">From whiteboard to validated hardware.</h2>
+      <p style="font-size:16.5px;line-height:1.65;color:#A7AEB8;max-width:540px;margin:0 0 56px;">A disciplined model-based pipeline. Every stage produces something you can measure — not a slide deck. Each phase is keyed to the discipline that leads it.</p>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid rgba(255,255,255,.1);border-radius:5px;overflow:hidden;">
+        <div style="padding:26px 22px;border-right:1px solid rgba(255,255,255,.1);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C79AD6;margin-bottom:18px;">01</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:8px;">Scope</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#8c93a0;margin:0;">Feasibility, requirements, architecture trade studies.</p>
+        </div>
+        <div style="padding:26px 22px;border-right:1px solid rgba(255,255,255,.1);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E8924E;margin-bottom:18px;">02</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:8px;">Model</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#8c93a0;margin:0;">Plant &amp; controller models, SIL, control-strategy design.</p>
+        </div>
+        <div style="padding:26px 22px;border-right:1px solid rgba(255,255,255,.1);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5BE0FF;margin-bottom:18px;">03</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:8px;">Build</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#8c93a0;margin:0;">Embedded code generation, calibration, bench bring-up.</p>
+        </div>
+        <div style="padding:26px 22px;border-right:1px solid rgba(255,255,255,.1);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#A8BE6E;margin-bottom:18px;">04</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:8px;">Validate</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#8c93a0;margin:0;">HIL / SIL test campaigns, failure-mode coverage, sign-off.</p>
+        </div>
+        <div style="padding:26px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7d8590;margin-bottom:18px;">05</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin-bottom:8px;">Handoff</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#8c93a0;margin:0;">Production-ready release, documentation, support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTORS ============ -->
+  <section id="sectors" style="padding:104px 8vw;">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#7d8590;margin-bottom:18px;">03 — WHERE WE WORK</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 46px;">Land and sea.</h2>
+      <div id="sectorGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;">
+        <div style="border:1px solid rgba(255,255,255,.09);border-radius:6px;overflow:hidden;background:#0A0D11;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="sec-auto" shape="rect" fit="cover" placeholder="Drop EV chassis / powertrain photo" style="display:block;width:100%;height:280px;" hint-size="100%,280px"></x-import>
+          <div style="padding:30px;">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;margin:0 0 12px;">Automotive</h3>
+            <p style="font-size:15.5px;line-height:1.62;color:#9AA3AF;margin:0 0 20px;">Electric and hybrid drive systems, supervisory controls, and validation for passenger, commercial and off-highway platforms.</p>
+            <div style="display:flex;gap:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8c93a0;">
+              <span>EV DRIVE</span><span>HYBRID</span><span>SUPERVISORY CTRL</span>
+            </div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.09);border-radius:6px;overflow:hidden;background:#0A0D11;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="sec-marine" shape="rect" fit="cover" placeholder="Drop marine vessel / propulsion photo" style="display:block;width:100%;height:280px;" hint-size="100%,280px"></x-import>
+          <div style="padding:30px;">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;margin:0 0 12px;">Marine</h3>
+            <p style="font-size:15.5px;line-height:1.62;color:#9AA3AF;margin:0 0 20px;">Electric and hybrid propulsion, power management and automation for vessels where reliability isn't optional.</p>
+            <div style="display:flex;gap:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8c93a0;">
+              <span>E-PROPULSION</span><span>POWER MGMT</span><span>AUTOMATION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WARM / HUMAN (aubergine block) ============ -->
+  <section id="team" style="padding:36px 8vw;color:#F0E8EC;">
+    <div id="teamPanel" style="max-width:1240px;margin:0 auto;background:linear-gradient(165deg,#31242F 0%,#271B25 100%);border:1px solid rgba(255,255,255,0.055);border-radius:22px;box-shadow:0 36px 90px -34px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.07);padding:74px 60px;">
+    <div id="teamGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.24em;color:#B3A6AF;margin-bottom:22px;">04 — WHO YOU WORK WITH</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.04;letter-spacing:-0.02em;margin:0 0 22px;">Senior engineers.<br>No handoffs.</h2>
+        <p style="font-size:17px;line-height:1.65;color:#BFB2BA;margin:0 0 18px;max-width:440px;">Astrape is a small team of senior electrification and controls engineers. There's no account manager and no junior bench — you work directly with the people doing the work.</p>
+        <p style="font-size:17px;line-height:1.65;color:#BFB2BA;margin:0 0 30px;max-width:440px;">We take a few projects at a time, on purpose. That's how the hard ones get finished.</p>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <a href="#contact" style="background:#EFE2D8;color:#33231A;font-weight:600;font-size:15px;padding:14px 26px;border-radius:40px;text-decoration:none;">Meet the team</a>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:#A99DA5;border:1px solid rgba(255,255,255,.2);padding:9px 13px;border-radius:2px;">SENIOR-ONLY · SINCE DAY ONE</span>
+        </div>
+      </div>
+      <div id="teamPortraits" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-p1" shape="rounded" radius="10" fit="cover" placeholder="Drop portrait" style="display:block;aspect-ratio:1/1;" hint-size="100%,100%"></x-import>
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-p2" shape="rounded" radius="10" fit="cover" placeholder="Drop portrait" style="display:block;aspect-ratio:1/1;" hint-size="100%,100%"></x-import>
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-p3" shape="rounded" radius="10" fit="cover" placeholder="Drop portrait" style="display:block;aspect-ratio:1/1;" hint-size="100%,100%"></x-import>
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-p4" shape="rounded" radius="10" fit="cover" placeholder="Drop portrait" style="display:block;aspect-ratio:1/1;" hint-size="100%,100%"></x-import>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" style="position:relative;overflow:hidden;padding:120px 8vw;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 62% at 50% 58%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:760px;margin:0 auto;">
+      <div style="width:22px;height:32px;background:var(--accent);clip-path:polygon(52% 0,100% 0,48% 44%,84% 44%,16% 100%,46% 52%,4% 52%);margin:0 auto 30px;box-shadow:0 0 var(--glow) color-mix(in srgb,var(--accent) 60%,transparent);animation:amFloat 5s ease-in-out infinite;"></div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(34px,6.5vw,58px);line-height:1.0;letter-spacing:-0.03em;margin:0 0 22px;">Let's build something<br>that moves.</h2>
+      <p style="font-size:18px;line-height:1.6;color:#A7AEB8;margin:0 0 38px;">Tell us about the platform, the powertrain, or the problem. We'll tell you straight whether we can help.</p>
+      <div style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
+        <a href="mailto:hello@astrapemotors.com" style="background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:16px;padding:16px 32px;border-radius:40px;text-decoration:none;box-shadow:0 0 var(--glow) color-mix(in srgb,var(--accent) 45%,transparent);">Start a project</a>
+        <a href="mailto:hello@astrapemotors.com" style="font-family:'IBM Plex Mono',monospace;color:#E7EAF0;font-size:15px;padding:16px 8px;text-decoration:none;">hello@astrapemotors.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="padding:54px 8vw;border-top:1px solid rgba(255,255,255,.08);background:#080705;">
+    <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:14px;height:21px;background:var(--accent);clip-path:polygon(52% 0,100% 0,48% 44%,84% 44%,16% 100%,46% 52%,4% 52%);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.2em;">ASTRAPE <span style="opacity:.45;font-weight:500;">MOTORS</span></span>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;line-height:1.7;margin:0;">Electrification · Controls · Automation · R&amp;D<br>Automotive &amp; Marine</p>
+      </div>
+      <div style="display:flex;gap:56px;flex-wrap:wrap;font-size:14px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5d6470;letter-spacing:.16em;margin-bottom:4px;">EXPLORE</span>
+          <a href="#capabilities" style="color:#9AA3AF;text-decoration:none;">Capabilities</a>
+          <a href="#sectors" style="color:#9AA3AF;text-decoration:none;">Sectors</a>
+          <a href="#process" style="color:#9AA3AF;text-decoration:none;">R&amp;D</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5d6470;letter-spacing:.16em;margin-bottom:4px;">CONTACT</span>
+          <a href="mailto:hello@astrapemotors.com" style="color:#9AA3AF;text-decoration:none;">hello@astrapemotors.com</a>
+          <a href="#contact" style="color:#9AA3AF;text-decoration:none;">Start a project</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:40px auto 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#454b54;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+      <span>© 2026 ASTRAPE MOTORS</span>
+      <span>astrapemotors.com</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Electric Blue&quot;,&quot;Violet Surge&quot;,&quot;Charged Lime&quot;],&quot;default&quot;:&quot;Electric Blue&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;glow&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Subtle&quot;,&quot;Charged&quot;,&quot;Default&quot;],&quot;default&quot;:&quot;Subtle&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  constructor(props){ super(props); this.rootRef = React.createRef(); }
+
+  palette(){
+    const map = {
+      "Electric Blue": { accent:"#5BE0FF", ink:"#06222B", a2:"#9B8CFF" },
+      "Violet Surge":  { accent:"#9B8CFF", ink:"#140433", a2:"#5BE0FF" },
+      "Charged Lime":  { accent:"#B6F45A", ink:"#162109", a2:"#5BE0FF" }
+    };
+    return map[this.props.accent] || map["Electric Blue"];
+  }
+
+  applyVars(){
+    const el = this.rootRef.current; if(!el) return;
+    const p = this.palette();
+    el.style.setProperty("--accent", p.accent);
+    el.style.setProperty("--accent-ink", p.ink);
+    el.style.setProperty("--accent-2", p.a2);
+    el.style.setProperty("--glow", (this.props.glow === "Charged" ? "44px" : this.props.glow === "Subtle" ? "10px" : "30px"));
+  }
+
+  componentDidMount(){ this.applyVars(); }
+  componentDidUpdate(){ this.applyVars(); }
+
+  renderVals(){
+    return {
+      rootRef: this.rootRef,
+      showMarquee: this.props.showMarquee ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
