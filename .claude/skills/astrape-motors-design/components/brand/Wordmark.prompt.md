@@ -1,4 +1,4 @@
-The full wordmark lockup — bolt + "ASTRAPE MOTORS" in Space Grotesk 700, wide tracking, "MOTORS" dimmed. Use in nav, footer, brand headers.
+The full wordmark lockup — bolt + "ASTRAPĒ MOTORS" in Space Grotesk 700, wide tracking, "MOTORS" dimmed. Use in nav, footer, brand headers.
 
 ```jsx
 <Wordmark size={15} />

@@ -1,0 +1,26 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Interaction affordance" subtitle="Clickable carries an arrow-chip + hover lift; static stays flat" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg, #0A0907); color: var(--text-primary, #E7EAF0); font-family: var(--font-sans, "IBM Plex Sans", sans-serif); }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; padding: 26px 30px 12px; align-items: stretch; }
+  .mini { border: 1px solid rgba(255,255,255,.08); border-radius: 6px; background: #0C0F14; padding: 22px 20px; height: 100%; box-sizing: border-box; }
+  .mini h4 { font-family: var(--font-display, "Space Grotesk", sans-serif); font-weight: 600; font-size: 17px; margin: 0 0 8px; padding-right: 30px; }
+  .mini p { font-size: 13px; line-height: 1.55; color: var(--text-tertiary, #9AA3AF); margin: 0; }
+  .cap { font-family: var(--font-mono, monospace); font-size: 10.5px; letter-spacing: .16em; color: var(--text-mono-muted, #5d6470); padding: 0 30px 4px; }
+  .row { padding: 6px 30px 26px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="am-card" style="--k:#5BE0FF;" href="#"><div class="mini"><h4>Keyed link</h4><p>Whole card is a link — discipline-colored arrow chip, hover lift + border glow.</p></div></a>
+    <a class="am-card" href="#"><div class="mini"><h4>Neutral link</h4><p>Same affordance, neutral key — for markets and generic destinations.</p></div></a>
+    <div class="mini"><h4>Static card</h4><p>No chip, no hover. A container, not a link — so it never reads as clickable.</p></div>
+  </div>
+  <div class="cap">INLINE CTA</div>
+  <div class="row"><a class="am-arrow-link" href="#">See the full capabilities overview <span class="am-arr" aria-hidden="true">→</span></a></div>
+</body>
+</html>

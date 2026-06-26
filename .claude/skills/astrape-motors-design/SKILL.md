@@ -22,8 +22,9 @@ first); read the rules here and design directly in the repo for production work.
    foundations, iconography. Non-negotiable reading before you design.
 2. This file — the fast API map and recipes.
 3. The specific `components/*/*.prompt.md` for any component you'll use.
-4. **`reference/handoff-homepage/`** — the canonical production master + the Color Harmony,
-   Heading Stack, and Dichotomous Key system specs. Ground truth when in doubt.
+4. **`reference/handoff-homepage/system-specs/`** — the Color Harmony, Heading Stack, and
+   Dichotomous Key specs: ground truth for the color-wheel geometry and the gradient rules.
+   (The rest of that folder is the original homepage handoff, kept as historical context.)
 
 ---
 
@@ -102,12 +103,15 @@ Each lives in `components/<group>/<Name>.jsx` with a sibling `.d.ts` (props) and
 Copy-ready starting pages. Each loads the system via its `ds-base.js` and composes the
 components. Edit the markup directly — it's plain editable HTML that can mount components.
 
-- `marketing-homepage` — full homepage (nav → hero → cybernetics quote → process → sectors → team → testimonials → contact → footer)
-- `capabilities` — capabilities index: the loop, the four specialties, software & data
-- `service-page` (**Controls**) — the canonical service-detail pattern (L3 gradient rule)
+- `marketing-homepage` — full homepage (nav → hero → capabilities → process → sectors → cybernetics quote → team → testimonials → contact → footer)
+- `capabilities` — capabilities index: the cybernetic loop, the systems-integration feature (what we do most), the four discipline specialties, and software & data
+- `service-integration` (**Systems Integration**) — the "what we do most" page (blue→violet brand pair); framed as the through-line under the four specialties, not a fifth discipline
+- `service-controls` (**Controls**) — the canonical service-detail pattern (L3 discipline-gradient rule)
 - `service-electrification` · `service-automation` · `service-rnd` — the other three discipline pages (blue / sage / plum)
+- `industry-page` — **sector page** master; one master drives all six sectors (automotive / marine / industrial / agricultural / energy / government) via `industries.data.js`. Markets stay neutral; only the capabilities they link carry discipline color.
 - `case-study` — project deep-dive (problem → sense/compute/actuate → metrics → quote)
 - `about` — who we are, the cybernetics philosophy, the senior team (aubergine PEOPLE surface)
+- `join-the-bench` — PE recruiting / partner-network page: the disciplines we call on, how the bench works, what we ask
 - `pitch-deck` — five 16:9 capability slides
 - `coming-soon` — minimal holding page
 
@@ -115,7 +119,7 @@ components. Edit the markup directly — it's plain editable HTML that can mount
 
 ## Deployable site (`site/`)
 
-A compiled, self-contained marketing site — 9 pages + `404.html` + `favicon.svg` +
+A compiled, self-contained marketing site — 16 pages + `404.html` + `favicon.svg` +
 `og-image.png`, every dependency inlined, FTP-ready. Generated from the templates;
 **never hand-edit** — re-export from the templates. Full page map + rebuild steps +
 social-card details in **`site/README.md`**. Each page ships a complete Open Graph /
@@ -137,6 +141,12 @@ Twitter card in its static `<head>` (`og-image.png`, 1200×630).
 ---
 
 ## Non-negotiables
+- **Affordance — clickable must look clickable.** A bordered card is a container unless it
+  carries an affordance. Use the shared utilities (`patterns/affordance.css`, shipped via
+  `styles.css`): wrap a card in `<a class="am-card">` for the corner arrow-chip + hover lift
+  (set `--k:<discipline color>` to key it, omit for neutral markets); use
+  `<a class="am-arrow-link">… <span class="am-arr">→</span></a>` for inline CTAs. Never leave a
+  link looking like static text, and never style a static card so it looks clickable.
 - **Color = discipline.** Warm near-black spine `#0A0907` (low chroma — *never* blue-black).
   One electric blue + three muted warm keys (clay/sage/plum). Color appears **only** where
   it means a discipline; markets, sections, and chrome stay neutral.
@@ -151,16 +161,21 @@ Twitter card in its static `<head>` (`og-image.png`, 1200×630).
 - **Motion** minimal: marquee, a gentle bolt float, slow glow breathe, 6s quote cross-fade,
   whisper of scroll-parallax on glows only. No bounce, no spring, hover = brighten, press =
   no shrink. Always respect `prefers-reduced-motion`.
+- **Positioning — four disciplines; integration is what we do most.** Lead with the four
+  disciplines (electrification · controls · automation & test · R&D). Whatever a project gets
+  called, underneath it's usually a **systems-integration** problem: subsystems that were never
+  meant to work together made to behave as one machine — requirements, interfaces, architecture,
+  bring-up, V&V. Surface systems integration as the **most-common work** and the through-line
+  under the four — **not** a fifth discipline or a tier ranked above them. And we work at the
+  **systems level** — we architect, integrate, control and validate; we select / size / specify /
+  integrate components but do **not** do detailed ME/EE design (magnetics, structural analysis,
+  PCB layout) — for stamped detail design we bring in the right PE. Never write copy that claims
+  component-level design.
 - **Voice:** confident, senior, blunt, engineering-honest. "We" to "you". Sentence-case
   headlines, often two-beat with a period. Proof over adjectives. **No emoji ever.** The
   only Unicode flourishes are `· / —` and the brand's own `ē`.
 - **Iconography:** the bolt is the *only* glyph. No icon library, no emoji — use a mono
   label, key-bar, `/0N` index, or legend dot instead.
-- **Copy guardrails (legal):** Astrapē holds no PE license / COA. **Never** ship "professional
-  engineer(ing)", "P.E.", "licensed/registered engineer", or any "seal/stamp" claim. Use
-  "engineering firm/services" only when tethered to the product/build frame, never as a
-  services-for-hire offer; "systems engineering" as a *discipline* is fine. Full rule +
-  rationale (ORC 4733.16): `guidelines/copy-guardrails.md`. Enforced by `node scripts/copy-audit.mjs`.
 
 ## Agent gotchas
 - Don't hand-edit `_ds_bundle.js` / `_ds_manifest.json` / `_adherence.oxlintrc.json` or
@@ -170,7 +185,3 @@ Twitter card in its static `<head>` (`og-image.png`, 1200×630).
 - Don't add a second gradient or a second nav CTA to a view.
 - The `Ē` is keyed (electric blue, or the page's discipline) — keep it; never flatten the
   wordmark to plain "ASTRAPE".
-- Copy lives in many places (template `.dc.html`, the `SiteFooter` `tagline` default prop,
-  per-page meta ×3, the exported `site/` + root HTML). Change copy at the **source** — the
-  `.dc.html` template **and** any component default prop that bakes it in — then re-export;
-  don't patch one rendered copy. Run `node scripts/copy-audit.mjs` before shipping.

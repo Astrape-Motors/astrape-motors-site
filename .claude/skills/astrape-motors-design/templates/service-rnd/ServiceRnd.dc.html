@@ -8,7 +8,7 @@
 <body>
 <template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="position:fixed;inset:0;width:100%;height:100%;background:#0A0907"><path d="M50.8 20 L70.4 20 L49.2 46.4 L63.9 46.4 L36.1 80 L48.4 51.2 L31.2 51.2 Z" fill="#5BE0FF"/></svg></template>
 <x-dc>
-<!-- @template name="Service · R&D & Consulting" description="R&D & Consulting discipline detail page (/04, plum) — where the loop starts. Mirrors the service-page pattern with the plum two-tone heading." -->
+<!-- @template name="Service · R&D & Consulting" description="R&D & Consulting discipline detail page (/04, plum) — where the loop starts. Mirrors the Controls service-detail pattern with the plum two-tone heading." -->
 <helmet>
 <script src="./ds-base.js"></script>
 <style>
@@ -22,7 +22,7 @@
 
   <!-- NAV -->
   <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 8vw;background:rgba(10,9,7,0.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);">
-    <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Wordmark" size="15" hint-size="200px,30px"></x-import>
+    <a href="../marketing-homepage/MarketingHomepage.dc.html" style="display:inline-flex;text-decoration:none;" aria-label="Astrapē Motors — home"><x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Wordmark" size="15" hint-size="200px,30px"></x-import></a>
     <div style="display:flex;align-items:center;gap:32px;font-size:14px;color:#9AA3AF;">
       <a href="../capabilities/Capabilities.dc.html" style="color:inherit;text-decoration:none;white-space:nowrap;">← All capabilities</a>
       <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="sm" href="#contact" hint-size="100px,40px">Contact</x-import>
@@ -70,6 +70,19 @@
     </div>
   </section>
 
+  <!-- CYBERNETICS EPIGRAPH -->
+  <section style="position:relative;overflow:hidden;padding:88px 8vw;border-top:1px solid rgba(255,255,255,.07);">
+    <div style="position:absolute;inset:-30% 0;background:radial-gradient(ellipse 46% 60% at 50% 50%,color-mix(in srgb,#9B8CFF 8%,transparent),transparent 66%);pointer-events:none;" class="am-glow"></div>
+    <div style="position:relative;max-width:900px;margin:0 auto;text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:#7d8590;margin-bottom:22px;">ON CONTROL &amp; COMMUNICATION</div>
+      <div style="width:40px;height:2px;background:linear-gradient(95deg,#5BE0FF,#9B8CFF);margin:0 auto 30px;"></div>
+      <blockquote style="margin:0;">
+        <p style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(23px,3.2vw,34px);line-height:1.24;letter-spacing:-0.02em;color:#E7EAF0;margin:0 auto 22px;max-width:820px;">I just wondered <span style="color:#5BE0FF;">how things were put together</span>.</p>
+        <cite style="font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:12.5px;letter-spacing:.18em;color:#9AA3AF;">&mdash; CLAUDE SHANNON</cite>
+      </blockquote>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" style="position:relative;overflow:hidden;padding:110px 8vw;text-align:center;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 62% at 50% 58%,color-mix(in srgb,#5BE0FF 12%,transparent),transparent 62%);pointer-events:none;" class="am-glow"></div>
@@ -79,7 +92,7 @@
       </div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,6vw,52px);line-height:1.0;letter-spacing:-0.03em;margin:0 0 22px;">Early-stage and unsure?</h2>
       <p style="font-size:18px;line-height:1.6;color:#A7AEB8;margin:0 0 36px;">Send the idea and the constraint. We'll tell you straight whether it's worth building — and we can help.</p>
-      <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="lg" href="mailto:hello@astrapemotors.com" hint-size="170px,52px">Start a project</x-import>
+      <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="lg" href="mailto:projects@astrapemotors.com" hint-size="170px,52px">Start a project</x-import>
     </div>
   </section>
 

@@ -2,7 +2,7 @@ Mono labels & display headings — the three pieces that frame every section.
 
 ```jsx
 <Eyebrow color="var(--disc-electrification)">01 — WHAT WE DO</Eyebrow>
-<SectionHeading level="h2">The full electrification stack, under one roof.</SectionHeading>
+<SectionHeading level="h2">We're a systems engineering firm.</SectionHeading>
 
 {/* L1 hero — the one place the brand-pair gradient lives */}
 <SectionHeading level="h1">

@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Astrapē Motors — Interaction affordances
+   --------------------------------------------------------------------------
+   Make clickable things obviously clickable, and leave static things flat.
+   The rule of thumb: a bordered card is just a container UNLESS it carries an
+   affordance. Two utilities provide that affordance:
+
+     .am-card        wrap a card in an <a> to make the whole card a link.
+                     Adds a corner arrow-chip, a hover lift, and a brightened
+                     border. Set --k to a discipline color to key it (capability
+                     cards); leave --k unset for neutral (market / generic cards).
+
+     .am-arrow-link  an inline text CTA — mono, brand-blue, underline + a
+                     trailing arrow that slides on hover. Wrap the arrow glyph in
+                     <span class="am-arr">→</span>.
+
+   Color = discipline still holds: keyed cards glow in their discipline color,
+   neutral cards (markets) get a restrained light affordance.
+   ========================================================================== */
+
+/* ---- Clickable card -------------------------------------------------------- */
+.am-card {
+  position: relative;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.am-card > * {
+  transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
+}
+.am-card:hover > * {
+  border-color: color-mix(in srgb, var(--k, var(--brand-blue, #5BE0FF)) 55%, transparent) !important;
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 38px -20px rgba(0, 0, 0, .72),
+    0 0 0 1px color-mix(in srgb, var(--k, var(--brand-blue, #5BE0FF)) 30%, transparent);
+}
+.am-card:focus-visible {
+  outline: 2px solid var(--k, var(--brand-blue, #5BE0FF));
+  outline-offset: 3px;
+  border-radius: var(--r-card, 6px);
+}
+.am-card::after {
+  content: "\2192";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 13px;
+  line-height: 1;
+  color: var(--k, var(--brand-blue, #5BE0FF));
+  border: 1px solid color-mix(in srgb, var(--k, var(--brand-blue, #5BE0FF)) 50%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--k, var(--brand-blue, #5BE0FF)) 13%, rgba(10, 9, 7, .6));
+  transition: background .16s ease, color .16s ease, transform .16s ease, border-color .16s ease;
+}
+.am-card:hover::after {
+  background: var(--k, var(--brand-blue, #5BE0FF));
+  color: #0A0907;
+  border-color: var(--k, var(--brand-blue, #5BE0FF));
+  transform: translate(2px, -2px);
+}
+
+/* ---- Inline arrow CTA ------------------------------------------------------ */
+.am-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: var(--brand-blue, #5BE0FF);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-blue, #5BE0FF) 22%, transparent);
+  padding-bottom: 3px;
+  transition: border-color .16s ease;
+}
+.am-arrow-link:hover {
+  border-color: var(--brand-blue, #5BE0FF);
+}
+.am-arrow-link .am-arr {
+  display: inline-block;
+  transition: transform .16s ease;
+}
+.am-arrow-link:hover .am-arr {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-card:hover > *,
+  .am-card:hover::after,
+  .am-arrow-link:hover .am-arr {
+    transform: none;
+  }
+}

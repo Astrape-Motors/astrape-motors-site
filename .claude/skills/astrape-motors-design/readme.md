@@ -13,10 +13,12 @@ for Astrapē Motors.
 ## Sources (for the reader, if you have access)
 - **GitHub:** [`Astrape-Motors/astrape-motors-site`](https://github.com/Astrape-Motors/astrape-motors-site)
   — the static marketing site. Explore it to build better Astrapē designs.
-- The production design master + three reference specs are preserved in
-  [`reference/handoff-homepage/`](reference/handoff-homepage/): the homepage `.dc.html`,
-  a detailed handoff `README.md`, and the **Color Harmony**, **Heading Stack** and
-  **Dichotomous Key** system specs. These are the canonical source of truth.
+- The three **system specs** — **Color Harmony**, **Heading Stack** and **Dichotomous
+  Key** — live in [`reference/handoff-homepage/system-specs/`](reference/handoff-homepage/system-specs/)
+  and remain the ground truth for the color-wheel geometry and the gradient rules. The same
+  folder keeps the original homepage design master + handoff `README.md` as a **historical
+  record** of the first build — useful for context, but the live source of truth is now the
+  templates, tokens and components in this project, not that handoff.
 
 ---
 
@@ -41,8 +43,14 @@ Key spec. Do not build it yet.)*
 
 ## Content fundamentals — how Astrapē writes
 - **Voice:** confident, senior, blunt. Engineering-honest, never salesy. A systems
-  engineering firm; electrification, controls, automation and R&D are its specialties. The
-  brand is the team that "takes the hard problems no one else will."
+  engineering firm built on **four disciplines** — electrification, controls, automation & test,
+  and R&D. **Systems integration is the work we do most**: most projects are, underneath, an
+  integration problem — subsystems made to behave as one machine (requirements, interfaces,
+  architecture, bring-up, V&V). Frame it as the most-common work and the thread through the
+  four, **not** a fifth discipline or a tier ranked above them. We work at the **systems level**
+  and bring in a PE for stamped detail design — copy claims architecture / integration /
+  controls / V&V, never component-level ME/EE design. The brand is the team that "takes the
+  hard problems no one else will."
 - **Person:** "we" (the firm) speaking to "you" (the client). Direct address.
   *"You work directly with the people doing the work."*
 - **Casing:** sentence case for headings (*"Land and sea."*, *"Senior engineers. No
@@ -81,10 +89,17 @@ Key spec. Do not build it yet.)*
   shadowed. Discipline cards add a 30×3px **key-bar** in the discipline color.
 - **Corner radii** are small and deliberate: tags 2px, cards 4–6px, portraits 10px, the
   one big panel 22px, pills fully round (40px). Engineering-flat, not bubbly.
-- **Motion** is minimal and linear: a 24s marquee scroll, a 5s ±9px bolt float, an 18ms
-  hover brighten. **No bounce, no spring, no parallax.** Respect reduced-motion.
+- **Motion** is minimal and linear: a 24s marquee scroll, a 5s ±9px bolt float, a 6s quote
+  cross-fade, an 18ms hover brighten, and a *whisper* of scroll-parallax on background glows
+  only. **No bounce, no spring.** Respect reduced-motion.
 - **Hover:** brighten (`filter: brightness(1.08)`) / underlineless link color shift.
   **Press:** no shrink — the brand stays still and precise.
+- **Affordance — make clickable things obviously clickable.** A bordered card is a *container*
+  unless it carries an affordance. Two shared utilities supply it (`patterns/affordance.css`):
+  `.am-card` wraps a card in an `<a>` (corner arrow-chip + hover lift + border glow; set `--k`
+  to a discipline color to key it, leave unset for neutral markets); `.am-arrow-link` is the
+  inline mono CTA (brand-blue, underline, sliding `→`). Static cards get neither — that
+  contrast is what tells a visitor what's a link.
 - **Layout:** content capped at 1180px (1240px for the floating panel), centered, 8vw
   gutters, ~104px section padding. Sticky blurred nav. `overflow-x: hidden` wrapper.
 
@@ -127,6 +142,7 @@ the licensed files first.**
 - `components/labels/` — `Eyebrow`, `Tag`, `SectionHeading`
 - `components/content/` — `CapabilityCard`, `StatRow`, `Marquee`, `ProcessStepper`, `LoopBlock`, `TestimonialCard`
 - `components/navigation/` — `SiteNav` (sticky blurred header), `SiteFooter` (canonical page foot) — the shared page chrome; every page composes these rather than inlining a `<nav>`/`<footer>`
+- `patterns/affordance.css` — `.am-card` / `.am-arrow-link` interaction utilities (shipped via `styles.css`)
 
 **Foundation cards** (Design System tab): `guidelines/*.html` — grouped Colors / Type /
 Spacing / Brand.
@@ -134,22 +150,27 @@ Spacing / Brand.
 **UI kit:** `ui_kits/marketing-site/` — interactive homepage recreation (`index.html`,
 `sections.jsx`, `app.jsx`).
 
-**Deployable site:** `site/` — the compiled, self-contained marketing site (9 pages +
-404 + favicon), ready to FTP to the web root. Generated from the templates; see
-`site/README.md` for the page map and rebuild steps. **Never hand-edit** the files in
-`site/` — re-export from the templates instead.
+**Deployable site:** `site/` — the compiled, self-contained marketing site (16 pages +
+`404.html` + `favicon.svg` + `og-image.png`), ready to FTP to the web root. Generated from
+the templates; see `site/README.md` for the full page map and rebuild steps. **Never
+hand-edit** the files in `site/` — re-export from the templates instead.
 
 **Templates** (`templates/<slug>/` — copy-ready starting pages, each a `.dc.html`):
-- `marketing-homepage` — the full homepage (nav → hero → cybernetics → process → sectors → team → testimonials → contact)
-- `capabilities` — capabilities index: the loop, the four specialties, software & data
-- `service-page` — **Controls** detail page (the canonical service-detail pattern; L3 gradient rule)
+- `marketing-homepage` — the full homepage (nav → hero → capabilities → process → sectors → cybernetics → team → testimonials → contact → footer)
+- `capabilities` — capabilities index: the cybernetic loop, the systems-integration feature (what we do most), the four discipline specialties, and software & data
+- `service-integration` — **Systems Integration** page: the work we do most, framed as the through-line under the four specialties (the only service page that earns the blue→violet brand pair)
+- `service-controls` — **Controls** detail page (the canonical service-detail pattern; L3 discipline-gradient rule)
 - `service-electrification` · `service-automation` · `service-rnd` — the other three discipline detail pages (blue / sage / plum), siblings of Controls
+- `industry-page` — **sector page** master (Automotive); the six deployed sector pages (automotive, marine, industrial, agricultural, energy, government) are all generated from this one master by substituting `industries.data.js`. Markets stay neutral; only the capabilities they surface carry discipline color.
 - `case-study` — project deep-dive (problem → sense/compute/actuate → metrics → quote)
 - `about` — who we are, the cybernetics philosophy, the senior team (aubergine PEOPLE surface)
+- `join-the-bench` — PE recruiting / partner-network page: the disciplines we call on, how the bench works, what we ask
 - `pitch-deck` — five 16:9 capability slides
 - `coming-soon` — minimal single-screen holding page
 
-**Reference:** `reference/handoff-homepage/` — production design master + handoff +
-Color Harmony / Heading Stack / Dichotomous Key specs.
+**Reference:** `reference/handoff-homepage/system-specs/` — the **Color Harmony**, **Heading
+Stack** and **Dichotomous Key** specs (ground truth for color + gradient rules). The rest of
+`reference/handoff-homepage/` is the original homepage design master + handoff, kept as a
+historical record of the first build.
 
 **Skill:** `SKILL.md` — portable Agent-Skill wrapper.
