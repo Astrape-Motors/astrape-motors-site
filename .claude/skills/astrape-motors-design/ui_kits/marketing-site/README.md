@@ -1,7 +1,7 @@
 # Marketing site — UI kit
 
 A high-fidelity, interactive recreation of the **astrapemotors.com** homepage, rebuilt
-from the production design master (`design/handoff-homepage`) and composed entirely from
+from the production homepage and composed entirely from
 this design system's component primitives.
 
 ## Run it
@@ -25,7 +25,7 @@ mounts the React sections.
 
 ## Honest placeholders
 The 6 image slots (2 sector photos, 4 team portraits) render as labelled photo wells —
-the production page awaits real, non-AI photography (see the handoff README). Don't ship
+the production page awaits real, non-AI photography. Don't ship
 stock strangers on the "senior-only" team panel.
 
 ## Surface system (why each section looks the way it does)

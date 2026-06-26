@@ -1,7 +1,7 @@
 # Astrapē Motors — deployable site (`/site/`)
 
-This folder is the **compiled, self-contained marketing site** — ready to FTP to the web
-root of `astrapemotors.com`. Every page is a single HTML file with the design-system
+This folder is the **compiled, self-contained marketing site** — ready to commit and push to
+the site repo; the live `astrapemotors.com` serves from GitHub. Every page is a single HTML file with the design-system
 stylesheet, the component bundle, fonts (Google Fonts CDN), and the DC runtime **inlined**.
 No build step, no server, no `_ds_bundle.js` dependency at runtime.
 

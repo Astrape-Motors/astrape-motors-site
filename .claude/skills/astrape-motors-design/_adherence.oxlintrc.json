@@ -21,7 +21,6 @@
               "components/content/**",
               "components/labels/**",
               "components/navigation/**",
-              "reference/handoff-homepage/**",
               "ui_kits/marketing-site/**"
             ],
             "message": "Import design-system components from 'index.js', not component internals."

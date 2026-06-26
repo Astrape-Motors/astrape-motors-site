@@ -22,9 +22,8 @@ first); read the rules here and design directly in the repo for production work.
    foundations, iconography. Non-negotiable reading before you design.
 2. This file — the fast API map and recipes.
 3. The specific `components/*/*.prompt.md` for any component you'll use.
-4. **`reference/handoff-homepage/system-specs/`** — the Color Harmony, Heading Stack, and
-   Dichotomous Key specs: ground truth for the color-wheel geometry and the gradient rules.
-   (The rest of that folder is the original homepage handoff, kept as historical context.)
+4. **`reference/system-specs/`** — the Color Harmony, Heading Stack, and Dichotomous Key
+   specs: ground truth for the color-wheel geometry and the gradient rules.
 
 ---
 
@@ -120,7 +119,7 @@ components. Edit the markup directly — it's plain editable HTML that can mount
 ## Deployable site (`site/`)
 
 A compiled, self-contained marketing site — 16 pages + `404.html` + `favicon.svg` +
-`og-image.png`, every dependency inlined, FTP-ready. Generated from the templates;
+`og-image.png`, every dependency inlined, deploy-ready (push to GitHub). Generated from the templates;
 **never hand-edit** — re-export from the templates. Full page map + rebuild steps +
 social-card details in **`site/README.md`**. Each page ships a complete Open Graph /
 Twitter card in its static `<head>` (`og-image.png`, 1200×630).

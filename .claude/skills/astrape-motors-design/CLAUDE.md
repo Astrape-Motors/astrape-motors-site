@@ -11,8 +11,8 @@ components, templates, and brand rules. Start by reading its `readme.md` and `SK
 - Editable masters: the `.dc.html` templates, the `tokens/*.css`, and `components/**`.
 - Generated — **never hand-edit**: `_ds_bundle.js`, `_ds_manifest.json`,
   `_adherence.oxlintrc.json`. They are rebuilt by the design workspace's compiler.
-- The live marketing site is the compiled, self-contained **root `index.html`** (see the
-  design master in `.claude/skills/astrape-motors-design/reference/handoff-homepage/`).
+- The live marketing site is the compiled, self-contained **root `index.html`**, re-exported
+  from the homepage master at `.claude/skills/astrape-motors-design/templates/marketing-homepage/`.
 
 ## Standing rule — auto-commit & push design-system changes
 When I change tokens, components, or templates under
@@ -31,7 +31,7 @@ artifacts**: add them to the relevant ignore globs (`.prettierignore`, stylelint
 ignores) rather than reformatting them. Re-export from the design master instead of editing
 compiled output by hand.
 
-## Deploy (unchanged)
-`npm run build` → `npm run deploy:ftp` (Porkbun; FTP password via macOS Keychain service
-`astrape-motors-ftp`). Replace the root `index.html` with a fresh export from the design
-master, then build + deploy.
+## Deploy
+Build the static site and push it to GitHub — that's the whole deploy. Pushing to the repo is
+the deploy (Porkbun serves from GitHub); there is no FTP step, no `deploy:ftp`, and no manual
+upload. Refresh the static export (design master → `site/`) before pushing.

@@ -1,5 +1,5 @@
 /* Astrapē Motors — marketing site UI kit · section components.
-   Recreated from the production homepage (design/handoff-homepage). Composes the
+   Recreated from the production homepage. Composes the
    design-system primitives from the compiled bundle. Each section is exported to
    window so the Babel-scoped index.html can mount them. */
 

@@ -14,11 +14,9 @@ for Astrapē Motors.
 - **GitHub:** [`Astrape-Motors/astrape-motors-site`](https://github.com/Astrape-Motors/astrape-motors-site)
   — the static marketing site. Explore it to build better Astrapē designs.
 - The three **system specs** — **Color Harmony**, **Heading Stack** and **Dichotomous
-  Key** — live in [`reference/handoff-homepage/system-specs/`](reference/handoff-homepage/system-specs/)
-  and remain the ground truth for the color-wheel geometry and the gradient rules. The same
-  folder keeps the original homepage design master + handoff `README.md` as a **historical
-  record** of the first build — useful for context, but the live source of truth is now the
-  templates, tokens and components in this project, not that handoff.
+  Key** — live in [`reference/system-specs/`](reference/system-specs/) and remain the ground
+  truth for the color-wheel geometry and the gradient rules. The live source of truth for
+  everything else is the templates, tokens and components in this project.
 
 ---
 
@@ -151,7 +149,7 @@ Spacing / Brand.
 `sections.jsx`, `app.jsx`).
 
 **Deployable site:** `site/` — the compiled, self-contained marketing site (16 pages +
-`404.html` + `favicon.svg` + `og-image.png`), ready to FTP to the web root. Generated from
+`404.html` + `favicon.svg` + `og-image.png`), ready to commit and push to the site repo. Generated from
 the templates; see `site/README.md` for the full page map and rebuild steps. **Never
 hand-edit** the files in `site/` — re-export from the templates instead.
 
@@ -168,9 +166,7 @@ hand-edit** the files in `site/` — re-export from the templates instead.
 - `pitch-deck` — five 16:9 capability slides
 - `coming-soon` — minimal single-screen holding page
 
-**Reference:** `reference/handoff-homepage/system-specs/` — the **Color Harmony**, **Heading
-Stack** and **Dichotomous Key** specs (ground truth for color + gradient rules). The rest of
-`reference/handoff-homepage/` is the original homepage design master + handoff, kept as a
-historical record of the first build.
+**Reference:** `reference/system-specs/` — the **Color Harmony**, **Heading Stack** and
+**Dichotomous Key** specs (ground truth for color + gradient rules).
 
 **Skill:** `SKILL.md` — portable Agent-Skill wrapper.
