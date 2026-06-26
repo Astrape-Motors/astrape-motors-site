@@ -138,15 +138,12 @@ the licensed files first.**
 - `components/brand/` — `Bolt`, `Wordmark`
 - `components/buttons/` — `Button` (primary · ghost · cream)
 - `components/labels/` — `Eyebrow`, `Tag`, `SectionHeading`
-- `components/content/` — `CapabilityCard`, `StatRow`, `Marquee`, `ProcessStepper`, `LoopBlock`, `TestimonialCard`
+- `components/content/` — `CapabilityCard`, `StatRow`, `Marquee`, `ProcessStepper`, `LoopBlock`, `TestimonialCard`, `RecruitPanel` (inset PEOPLE-surface recruiting CTA)
 - `components/navigation/` — `SiteNav` (sticky blurred header), `SiteFooter` (canonical page foot) — the shared page chrome; every page composes these rather than inlining a `<nav>`/`<footer>`
 - `patterns/affordance.css` — `.am-card` / `.am-arrow-link` interaction utilities (shipped via `styles.css`)
 
 **Foundation cards** (Design System tab): `guidelines/*.html` — grouped Colors / Type /
 Spacing / Brand.
-
-**UI kit:** `ui_kits/marketing-site/` — interactive homepage recreation (`index.html`,
-`sections.jsx`, `app.jsx`).
 
 **Deployable site:** `site/` — the compiled, self-contained marketing site (16 pages +
 `404.html` + `favicon.svg` + `og-image.png`), ready to commit and push to the site repo. Generated from

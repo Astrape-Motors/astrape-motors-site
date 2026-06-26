@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controls — Astrapē Motors</title>
+<meta name="description" content="Embedded control software, model-based design, calibration and supervisory strategy for real powertrains and machines.">
+<link rel="canonical" href="https://astrapemotors.com/controls/">
+<meta name="theme-color" content="#0A0907">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%235BE0FF%22%2F%3E%3Cstop%20offset%3D%220.55%22%20stop-color%3D%22%237FB8FF%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%239B8CFF%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M50.8%2020%20L70.4%2020%20L49.2%2046.4%20L63.9%2046.4%20L36.1%2080%20L48.4%2051.2%20L31.2%2051.2%20Z%22%20fill%3D%22%230A0907%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Astrapē Motors">
+<meta property="og:title" content="Controls — Astrapē Motors">
+<meta property="og:description" content="Embedded control software, model-based design, calibration and supervisory strategy for real powertrains and machines.">
+<meta property="og:url" content="https://astrapemotors.com/controls/">
+<meta property="og:image" content="https://astrapemotors.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Controls — Astrapē Motors">
+<meta name="twitter:description" content="Embedded control software, model-based design, calibration and supervisory strategy for real powertrains and machines.">
+<meta name="twitter:image" content="https://astrapemotors.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../ds/support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Service · Controls" description="Controls discipline detail page (/02, clay) — the 'compute' in the loop. The canonical service-detail pattern; siblings: Electrification, Automation & Test, R&D." -->
+<helmet>
+<link rel="stylesheet" href="../ds/styles.css">
+<script src="../ds/bundle.js"></script>
+<style>
+  #svcWhat, #svcDeliver { min-width: 0; }
+  @media (max-width: 900px) {
+    #svcWhat { grid-template-columns: 1fr !important; gap: 36px !important; }
+  }
+  @media (max-width: 560px) {
+    #svcDeliver { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden;background:#0A0907;color:#E7EAF0;font-family:'IBM Plex Sans',system-ui,sans-serif;">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 8vw;background:rgba(10,9,7,0.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);">
+    <a href="/" style="display:inline-flex;text-decoration:none;" aria-label="Astrapē Motors — home"><x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Wordmark" size="15" hint-size="200px,30px"></x-import></a>
+    <div style="display:flex;align-items:center;gap:32px;font-size:14px;color:#9AA3AF;">
+      <a href="/capabilities/" style="color:inherit;text-decoration:none;white-space:nowrap;">← All capabilities</a>
+      <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="sm" href="#contact" hint-size="100px,40px">Contact</x-import>
+    </div>
+  </nav>
+
+  <!-- HERO — L3 dedicated view: the discipline name earns its two-tone gradient -->
+  <section style="position:relative;overflow:hidden;padding:104px 8vw 80px;">
+    <div style="position:absolute;top:-200px;right:-140px;width:680px;height:680px;background:radial-gradient(circle,color-mix(in srgb,#E8924E 13%,transparent),transparent 62%);pointer-events:none;" class="am-glow"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap;">
+        <div style="width:30px;height:3px;background:#E8924E;border-radius:2px;"></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#E8924E;">/02 — CONTROLS</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.2em;color:#5d6470;">· A SYSTEMS ENGINEERING SPECIALTY</span>
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(52px,11vw,120px);line-height:0.94;letter-spacing:-0.035em;margin:0 0 28px;background:linear-gradient(100deg,#F4BE54 8%,#DC5A26 92%);-webkit-background-clip:text;background-clip:text;color:transparent;">Controls.</h1>
+      <p style="font-size:20px;line-height:1.6;color:#A7AEB8;max-width:600px;margin:0;">The <strong style="color:#E7EAF0;font-weight:600;">compute</strong> in sense → compute → actuate: embedded control software, model-based design, calibration and supervisory strategy. We write the code that decides how the machine behaves — built for real hardware, not slideware.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section style="padding:80px 8vw;border-top:1px solid rgba(255,255,255,.07);">
+    <div id="svcWhat" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#7d8590;margin-bottom:18px;">WHAT WE DELIVER</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.05;letter-spacing:-0.02em;margin:0;max-width:380px;">Supervisory logic that survives the test rig.</h2>
+      </div>
+      <div id="svcDeliver" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Model-based design" body="Plant and controller models in Simulink, control-strategy design, and production code generation." tag="MBD" accent="#E8924E" hint-size="100%,240px"></x-import>
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Calibration" body="Bench and in-vehicle calibration, parameter sweeps, and tuning against measured data." tag="CAL" accent="#E8924E" hint-size="100%,240px"></x-import>
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Supervisory strategy" body="State machines, mode arbitration and fault handling for hybrid and electric powertrains." tag="SUP" accent="#E8924E" hint-size="100%,240px"></x-import>
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Embedded software" body="Target integration, real-time scheduling and bring-up on the embedded controller." tag="SW" accent="#E8924E" hint-size="100%,240px"></x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC STRIP -->
+  <section style="padding:64px 8vw;background:#0D0B08;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);">
+    <div style="max-width:1180px;margin:0 auto;display:flex;gap:40px;flex-wrap:wrap;">
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">TOOLCHAIN</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">Simulink · Embedded Coder</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">VALIDATION</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">SIL → HIL → vehicle</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6470;letter-spacing:.14em;margin-bottom:6px;">DOMAINS</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;">Land · sea · lab</div></div>
+    </div>
+  </section>
+
+  <!-- CYBERNETICS EPIGRAPH -->
+  <section style="position:relative;overflow:hidden;padding:88px 8vw;border-top:1px solid rgba(255,255,255,.07);">
+    <div style="position:absolute;inset:-30% 0;background:radial-gradient(ellipse 46% 60% at 50% 50%,color-mix(in srgb,#9B8CFF 8%,transparent),transparent 66%);pointer-events:none;" class="am-glow"></div>
+    <div style="position:relative;max-width:900px;margin:0 auto;text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:#7d8590;margin-bottom:22px;">ON CONTROL &amp; COMMUNICATION</div>
+      <div style="width:40px;height:2px;background:linear-gradient(95deg,#5BE0FF,#9B8CFF);margin:0 auto 30px;"></div>
+      <blockquote style="margin:0;">
+        <p style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(23px,3.2vw,34px);line-height:1.24;letter-spacing:-0.02em;color:#E7EAF0;margin:0 auto 22px;max-width:820px;">Every good regulator of a system must be <span style="color:#5BE0FF;">a model of that system</span>.</p>
+        <cite style="font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:12.5px;letter-spacing:.18em;color:#9AA3AF;">&mdash; CONANT &amp; ASHBY &middot; 1970</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="position:relative;overflow:hidden;padding:110px 8vw;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 62% at 50% 58%,color-mix(in srgb,#5BE0FF 12%,transparent),transparent 62%);pointer-events:none;" class="am-glow"></div>
+    <div style="position:relative;max-width:720px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;margin-bottom:28px;">
+        <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Bolt" size="30" float="true" glow-amount="30px" hint-size="20px,30px"></x-import>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,6vw,52px);line-height:1.0;letter-spacing:-0.03em;margin:0 0 22px;">Got a controls problem?</h2>
+      <p style="font-size:18px;line-height:1.6;color:#A7AEB8;margin:0 0 36px;">Send the platform and the behavior you need. We'll tell you straight whether we can help.</p>
+      <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="lg" href="mailto:projects@astrapemotors.com" hint-size="170px,52px">Start a project</x-import>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

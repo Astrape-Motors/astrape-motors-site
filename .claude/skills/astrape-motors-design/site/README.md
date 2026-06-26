@@ -10,6 +10,7 @@ No build step, no server, no `_ds_bundle.js` dependency at runtime.
 |---|---|---|
 | `index.html` | Homepage | `templates/marketing-homepage/` |
 | `capabilities.html` | Capabilities index | `templates/capabilities/` |
+| `systems-engineering.html` | Systems Engineering — method, ISO/IEC JTC 1/SC 7 standards, INCOSE (the "Process" nav target) | `templates/systems-engineering/` |
 | `integration.html` | Systems Integration — what we do most (/00, blue→violet) | `templates/service-integration/` |
 | `electrification.html` | Electrification (blue) | `templates/service-electrification/` |
 | `controls.html` | Controls (clay) | `templates/service-controls/` |

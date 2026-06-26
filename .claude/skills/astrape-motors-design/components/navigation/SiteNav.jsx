@@ -13,7 +13,7 @@ export function SiteNav({
   links = [
     { label: "Capabilities", href: "#capabilities" },
     { label: "Sectors", href: "#sectors" },
-    { label: "Process", href: "#process" },
+    { label: "Process", href: "systems-engineering.html" },
     { label: "About", href: "#team" },
   ],
   cta = { label: "Contact", href: "#contact" },
