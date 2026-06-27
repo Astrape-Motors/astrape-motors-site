@@ -1,5 +1,3 @@
-/* @ds-bundle: {"format":3,"namespace":"AstrapMotorsDesignSystem_547f1f","components":[{"name":"Bolt","sourcePath":"components/brand/Bolt.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"Button","sourcePath":"components/buttons/Button.jsx"},{"name":"CapabilityCard","sourcePath":"components/content/CapabilityCard.jsx"},{"name":"LoopBlock","sourcePath":"components/content/LoopBlock.jsx"},{"name":"Marquee","sourcePath":"components/content/Marquee.jsx"},{"name":"ProcessStepper","sourcePath":"components/content/ProcessStepper.jsx"},{"name":"RecruitPanel","sourcePath":"components/content/RecruitPanel.jsx"},{"name":"StatRow","sourcePath":"components/content/StatRow.jsx"},{"name":"TestimonialCard","sourcePath":"components/content/TestimonialCard.jsx"},{"name":"Eyebrow","sourcePath":"components/labels/Eyebrow.jsx"},{"name":"SectionHeading","sourcePath":"components/labels/SectionHeading.jsx"},{"name":"Tag","sourcePath":"components/labels/Tag.jsx"},{"name":"SiteFooter","sourcePath":"components/navigation/SiteFooter.jsx"},{"name":"SiteNav","sourcePath":"components/navigation/SiteNav.jsx"}],"sourceHashes":{"components/brand/Bolt.jsx":"c5428ad18155","components/brand/Wordmark.jsx":"107288021286","components/buttons/Button.jsx":"0743da5a9114","components/content/CapabilityCard.jsx":"51b6e3339c7a","components/content/LoopBlock.jsx":"7cc1fe01d1d6","components/content/Marquee.jsx":"0a459f2175ee","components/content/ProcessStepper.jsx":"50c57b0f1b9d","components/content/RecruitPanel.jsx":"7d67e6460b30","components/content/StatRow.jsx":"56aa7f981db7","components/content/TestimonialCard.jsx":"0d05ee7947f6","components/labels/Eyebrow.jsx":"96cc8a7645f7","components/labels/SectionHeading.jsx":"d84179692067","components/labels/Tag.jsx":"0fe23aa34466","components/navigation/SiteFooter.jsx":"ea62441b3e73","components/navigation/SiteNav.jsx":"7f96e3f3579b"},"inlinedExternals":[],"unexposedExports":[]} */
-
 (() => {
 
 const __ds_ns = (window.AstrapMotorsDesignSystem_547f1f = window.AstrapMotorsDesignSystem_547f1f || {});
@@ -952,7 +950,7 @@ function SiteNav({
     href: "#sectors"
   }, {
     label: "Process",
-    href: "systems-engineering.html"
+    href: "#process"
   }, {
     label: "About",
     href: "#team"
@@ -1018,6 +1016,8 @@ function SiteNav({
 }
 Object.assign(__ds_scope, { SiteNav });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/SiteNav.jsx", error: String((e && e.message) || e) }); }
+
+
 
 __ds_ns.Bolt = __ds_scope.Bolt;
 

@@ -16,7 +16,7 @@ site/
   systems-engineering/    → /systems-engineering/  (the "Process" nav target)
   integration/ controls/ electrification/ automation/ rnd/   (services)
   automotive/ marine/ industrial/ agricultural/ energy/ government/  (6 sectors)
-  case-study/  bench/
+  bench/
   404.html                (self-contained)
   ds/                     ← SHARED, cached across every page
     support.js   (DC runtime)
@@ -54,6 +54,13 @@ placeholders.
 These are **generated artifacts — never hand-edit them.** Rebuild from the templates:
 1. Copy the shared design system into `site/ds/`: `support.js`, `styles.css`, `tokens/`,
    `patterns/`, and `_ds_bundle.js` → **renamed `bundle.js`**.
+   - **CRITICAL:** when copying `_ds_bundle.js`, **strip its leading
+     `/* @ds-bundle: … */` marker comment.** That marker is what the design-system compiler
+     uses to recognize a bundle — leave it in a `.js` sitting inside the scanned project and the
+     next compile will **recursively re-ingest `site/ds/bundle.js` into `_ds_bundle.js`**,
+     doubling the bundle every turn. Markerless, it's just an inert asset (like `support.js`)
+     the compiler ignores. (Underscore-prefixed names like `_ds_bundle.js` are *also* ignored,
+     but GitHub Pages/Jekyll drops underscore paths — hence the markerless `bundle.js`.)
 2. For each template, in the page markup: swap `./support.js` → relative `ds/support.js`
    (`../ds/…` for `<slug>/` pages), and replace the helmet's `./ds-base.js` line with a static
    `<link rel="stylesheet" href="…ds/styles.css">` + `<script src="…ds/bundle.js">`.
