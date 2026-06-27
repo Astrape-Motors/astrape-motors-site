@@ -29,9 +29,9 @@
 <link rel="stylesheet" href="../ds/styles.css">
 <script src="../ds/bundle.js"></script>
 <style>
-  #svcWhat, #svcDeliver { min-width: 0; }
-  @media (max-width: 900px) { #svcWhat { grid-template-columns: 1fr !important; gap: 36px !important; } }
-  @media (max-width: 560px) { #svcDeliver { grid-template-columns: 1fr !important; } }
+  #svcWhat, #svcDeliver, #svcArtifacts { min-width: 0; }
+  @media (max-width: 900px) { #svcWhat { grid-template-columns: 1fr !important; gap: 36px !important; } #svcArtifacts { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 560px) { #svcDeliver { grid-template-columns: 1fr !important; } #svcArtifacts { grid-template-columns: 1fr !important; } }
 </style>
 </helmet>
 
@@ -42,6 +42,7 @@
     <a href="/" style="display:inline-flex;text-decoration:none;" aria-label="Astrapē Motors — home"><x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Wordmark" size="15" hint-size="200px,30px"></x-import></a>
     <div style="display:flex;align-items:center;gap:32px;font-size:14px;color:#9AA3AF;">
       <a href="/capabilities/" style="color:inherit;text-decoration:none;white-space:nowrap;">← All capabilities</a>
+      <a href="/engagements/" style="display:inline-flex;align-items:center;gap:8px;color:#E7EAF0;text-decoration:none;white-space:nowrap;font-weight:500;"><span style="width:6px;height:6px;border-radius:50%;background:#5BE0FF;display:inline-block;box-shadow:0 0 9px #5BE0FF;"></span>Engagements</a>
       <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.Button" size="sm" href="#contact" hint-size="100px,40px">Contact</x-import>
     </div>
   </nav>
@@ -72,6 +73,23 @@
         <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Battery integration" body="Pack sizing, BMS integration, thermal and safety — built around the duty cycle that matters." tag="BMS" accent="#5BE0FF" hint-size="100%,240px"></x-import>
         <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Power electronics" body="Inverter and converter selection and integration, motor matching, and the high-voltage system around them." tag="HV" accent="#5BE0FF" hint-size="100%,240px"></x-import>
         <x-import component-from-global-scope="AstrapMotorsDesignSystem_547f1f.CapabilityCard" title="Energy management" body="Power-flow strategy across sources and loads, so range and performance hold up in the real duty cycle." tag="EMS" accent="#5BE0FF" hint-size="100%,240px"></x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES · ARTIFACTS -->
+  <section style="padding:80px 8vw;border-top:1px solid rgba(255,255,255,.07);">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.28em;color:#7d8590;margin-bottom:16px;">DELIVERABLES · WHAT YOU WALK AWAY WITH</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 14px;max-width:560px;">Artifacts, not slides.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#9AA3AF;margin:0 0 38px;max-width:600px;">Every engagement ends in things you can run or measure — handed over so your team can own what we built.</p>
+      <div id="svcArtifacts" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Architecture &amp; topology</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">A powertrain block diagram with sized motor, inverter and battery.</div></div></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Trade-study report</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">Options weighed on range, cost, weight and packaging.</div></div></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Battery &amp; HV spec</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">Pack sizing, BMS plan and high-voltage safety package.</div></div></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Energy-management strategy</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">Power-flow logic tuned to the real duty cycle.</div></div></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Integration plan</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">Interfaces, harness and the path from bench to platform.</div></div></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:#0C0F14;padding:18px 18px;min-width:0;"><div style="flex:none;width:7px;height:7px;border-radius:2px;background:#5BE0FF;margin-top:6px;"></div><div style="min-width:0;"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;margin-bottom:5px;">Bench-validated prototype</div><div style="font-size:13px;line-height:1.5;color:#9AA3AF;">A drive system measured against the numbers it promised.</div></div></div>
       </div>
     </div>
   </section>

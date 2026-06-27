@@ -14,6 +14,7 @@ site/
   about/index.html        → /about/
   capabilities/index.html → /capabilities/
   systems-engineering/    → /systems-engineering/  (the "Process" nav target)
+  engagements/index.html  → /engagements/          (ways to work with us)
   integration/ controls/ electrification/ automation/ rnd/   (services)
   automotive/ marine/ industrial/ agricultural/ energy/ government/  (6 sectors)
   bench/
