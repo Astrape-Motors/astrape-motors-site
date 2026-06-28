@@ -38,3 +38,42 @@ body {
   background: color-mix(in srgb, var(--brand-blue) 30%, transparent);
   color: var(--text-primary);
 }
+
+/* ==========================================================================
+   Responsive guards — keep wide desktop layouts from overflowing on phones.
+   Mobile-only (max-width) media queries; desktop is untouched.
+   ========================================================================== */
+
+/* Sticky site nav: below 640px the right-hand link cluster drops onto its own
+   full-width line under the wordmark and wraps, instead of running off the
+   right edge. Targets every inline <nav> bar and the SiteNav component. */
+@media (max-width: 640px) {
+  nav[style*="sticky"] {
+    flex-wrap: wrap;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    row-gap: 12px;
+  }
+  nav[style*="sticky"] > div {
+    flex-basis: 100%;
+    max-width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+}
+
+/* Keyed process stepper: below 560px the phases stack into one column with
+   hairline dividers between rows, instead of an unreadable multi-up squeeze
+   that pushes the last phases off-screen. */
+@media (max-width: 560px) {
+  .am-stepper {
+    grid-template-columns: 1fr !important;
+  }
+  .am-stepper > * {
+    border-right: none !important;
+  }
+  .am-stepper > * + * {
+    border-top: 1px solid var(--line-strong, rgba(255, 255, 255, 0.1));
+  }
+}

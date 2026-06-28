@@ -71,16 +71,14 @@
 
 /* ---- Inline arrow CTA ------------------------------------------------------ */
 .am-arrow-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  width: max-content;
+  display: inline;
   font-family: var(--font-mono, "IBM Plex Mono", monospace);
   font-size: 13px;
+  line-height: 1.6;
   letter-spacing: .06em;
   color: var(--brand-blue, #5BE0FF);
   text-decoration: none;
-  white-space: nowrap;
+  max-width: 100%;
   border-bottom: 1px solid color-mix(in srgb, var(--brand-blue, #5BE0FF) 22%, transparent);
   padding-bottom: 3px;
   transition: border-color .16s ease;
